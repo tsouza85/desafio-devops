@@ -1,0 +1,9 @@
+stages:
+  - name: "Setup"
+    command: "pip install -r requirements.txt"
+  - name: "Lint"
+    command: "pylint --exit-zero **/*.py"
+  - name: "More lint"
+    command: "flake8 **/*.py"
+  - name: "Unit tests"
+    command: "pytest"
