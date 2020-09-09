@@ -1,30 +1,36 @@
 # Desafio DevOps
 
-Para esse desafio você deve criar um fork desse repositório, desenvolver o seu 
+Para esse desafio você deve criar um fork desse repositório, desenvolver o seu
 trabalho e disponibilizar acesso ao seu fork para os avaliadores.
 
 ## Desafio 1: provisionamento e deployment
 
-O desafio consiste em criar o código de provisionamento do ambiente AWS e 
+O desafio consiste em criar o código de provisionamento do ambiente AWS e
 deployment de uma pequena aplicação. Essa aplicação é feita em Python 3, depende
 de uma fila SQS e deve ser executada em containers Docker utilizando o serviço
-ECS. Você pode utilizar as ferramentas que achar melhor para solucionar o 
+ECS. Você pode utilizar as ferramentas que achar melhor para solucionar o
 problema, os avaliadores executarão as suas instruções para provisionar o
-ambiente utilizando o código criado por você. 
+ambiente utilizando o código criado por você.
 
-* Utilize as credenciais AWS fornecidas para criação dos recursos necessários
-* Utilize a região `us-east-1`
+### Must Have:
+
+* Utilize as credenciais AWS fornecidas para criação dos recursos necessários;
+* Utilize a região `us-east-1`;
 * Adicione uma sessão ao fim desse documento com as instruções para execução
-  do seu código
+  do seu código.
 
-### Execução modo desenvolvimento
+### Nice to Have
+* Faça o desenho da arquitetura de infraestrutura no cloudcraft ou draw.io;
+* Faça uma apresentação da solução em sua ferramenta preferida (simulando uma apresentação ao time de engenharia do produto).
+
+#### Execução modo desenvolvimento
 
     $ pip install -r requirements.txt
     $ export ENV="devel"
     $ export SQS_QUEUE_URL="https://queue.amazonaws.com/1234567890/queue-name"
     $ python src/app.py
 
-### Testando
+#### Testando
 
     $ curl http://localhost:5000/healthcheck
     {
@@ -43,7 +49,6 @@ ambiente utilizando o código criado por você.
       "message": "hello",
       "message_id": "662f19cc-a271-4113-b08a-1ede22eb09b7"
     }
-
 
 ## Desafio 2: desenvolvimento de script
 
@@ -86,12 +91,17 @@ com falha no stage "More lint":
     Failed!
     Skipping all other stages and exiting.
 
+### Must Have:
+
 * O seu script deve ser executado em ambiente Linux
 * Adicione uma sessão ao fim desse documento com as instruções para execução
   do seu script
+
+### Nice to Have
+* Crie um pipeline no GitHub Actions com os stages conforme descrito acima;
 
 
 # Dúvidas ou dificuldades
 
 Caso tenha alguma dúvida ou encontre alguma dificuldade na utilização das
-cresdenciais fornecidas entre em contato com `vinicius.figueiredo@zoop.com.br`.
+cresdenciais fornecidas entre em contato com `devops.challenge@zoop.com.br`.
